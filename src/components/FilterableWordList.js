@@ -47,15 +47,15 @@ const FilterableWordList = (props) => {
 	const handleRemoval = (word) => {
 		const f = () => {
 			dispatch( removeFromWords( word ) );
-			dispatch( setNotification(`removing the word '${word}'`, 1) );
+			dispatch( setNotification(`removing the word '${word}'`) );
 		}
 		return f;
 	}
 	const handleStarring = (word) => {
 		const f = () => {
-			const notification = word.starred ? `removing '${word.id}' from starred` : `adding '${word.id}' to starred`;
+			const note = word.starred ? `removing '${word.id}' from starred` : `adding '${word.id}' to starred`;
 			dispatch( updateIntoWords(word.id, { stored : word.stored, starred : !word.starred }) );
-			dispatch( setNotification(notification, 1) )
+			dispatch( setNotification(note) )
 		}
 		return f;
 	}

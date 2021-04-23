@@ -169,8 +169,8 @@ const App = () => {
             </Box>
             
             <Snackbar
-              open={!!note.note}
-              message={note.note}
+              open={!!note}
+              message={note}
               onClose={ () => dispatch( unsetNotification() ) }
               action={
                 <Button

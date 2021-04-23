@@ -1,25 +1,22 @@
-const initial = {
-	note : null,
-	type : null
-}
+const initial = null
 
 const prefix = '(notification)';
 
 const notificationReducer = (state=initial, action) => {
 	switch (action.type) {
-		case `${prefix} SET` : return { ...state, note : action.payload.note, type : action.payload.type };
-		case `${prefix} UNSET` : return { ...state, note : null, type : null };
+		case `${prefix} SET` : return action.payload;
+		case `${prefix} UNSET` : return null;
 		default : return state;
 	}
 }
 
-export const setNotification = (note, type) => {
+export const setNotification = (note) => {
 	console.log('setting note');
 	return { 
 		type : `${prefix} SET`, 
-		payload : { note, type } 
+		payload : note 
 	}
 };
-export const unsetNotification = (note, type) => ({ type : `${prefix} UNSET` });
+export const unsetNotification = () => ({ type : `${prefix} UNSET` });
 
 export default notificationReducer;

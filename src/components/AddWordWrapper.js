@@ -12,7 +12,7 @@ const AddWordWrapper = (props) => {
 	const handlePositive = (word) => {
 		console.log('adding the word', word);
 		dispatch( addIntoWords( word ) );
-		dispatch( setNotification(`adding the word '${word}'`, 1) )
+		dispatch( setNotification(`adding the word '${word}'`) )
 		dispatch( hideAdder() );
 	}
 
