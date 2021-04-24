@@ -1,5 +1,7 @@
 import axios from 'axios';
-const BASE_URI = 'http://localhost:3001/words';
+let BASE_URI = '/words';
+/* Uncomment following if you're running locally */
+// BASE_URI = 'http://localhost:3001/words'
 
 const getWord = (wordId) => {
 	const ENDPOINT = `${BASE_URI}/retrieve/${wordId}`;

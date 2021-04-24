@@ -5,7 +5,8 @@ import {
 	Container,
 	Card,
 	CardContent,
-	Button
+	Button,
+	Divider
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles'; 
 
@@ -136,7 +137,14 @@ const WordExpanded = (props) => {
 				<CardContent>
 				<Typography variant='h4' gutterBottom>{id}</Typography>
 				<ul className={classes.unstyledList}>
-					{ results.map( (result, index) => <Result result={result} key={index}/> ) }
+					{ results.map( 
+							(result, index) => (
+								<div>
+									<Result result={result} key={index}/> 
+									<Divider />
+								</div>
+							)
+						) }
 				</ul>
 				<Button
 					className={classes.closeBtn}

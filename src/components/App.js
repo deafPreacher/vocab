@@ -74,25 +74,24 @@ const App = () => {
   const menuRef = useRef();
 
   const handleMenuToggle = () => {
-    console.log('toggling menu bar');
     if (menuRef.current)
       menuRef.current.changeOpen(true);
   }
+  
   const handleDisplayStarred = () => {
     try {
       dispatch( initStarredWords() )  
     } catch (e) {
       console.error(e);
     }
-    console.log('show only starred');
   }
+
   const handleDisplayStored = () => {
     try {
       dispatch( initStoredWords() )
     } catch (e) {
       console.error(e);
     }
-    console.log('show all');
   }
 
 	useEffect(() => {
